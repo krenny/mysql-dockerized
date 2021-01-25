@@ -4,9 +4,13 @@ services:
     image: mysql
     restart: always
     environment:
+    #Change your root pw here
       MYSQL_ROOT_PASSWORD: CHANGEME
       MYSQL_DATABASE: phpmyadmin
     ports:
+    #if needed you can change your mysql port here
+    #example:
+    # - "3307:3306
       - "3306:3306"
     volumes:
       - ./mysql/data:/var/lib/mysql
@@ -17,4 +21,7 @@ services:
     environment:
       PMA_HOST: db
     ports:
+    #if needed you can change your webserver port here
+    #example:
+    # - "8888:80
       - "80:80"
